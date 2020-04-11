@@ -7,7 +7,6 @@ import {
   yearComponent,
   monthComponent,
 } from '../lib/calendars/commons';
-import weather from '../weather/weather.jsx';
 
 export const containerCss = css`
     background: rgba(0, 0, 0, 0.3);
