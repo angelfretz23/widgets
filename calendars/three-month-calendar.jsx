@@ -7,6 +7,7 @@ import {
   yearComponent,
   monthComponent,
 } from '../lib/calendars/commons';
+import weather from '../weather/weather.jsx';
 
 export const containerCss = css`
     background: rgba(0, 0, 0, 0.3);
@@ -48,12 +49,17 @@ export const command = commandBuilder();
 
 export const render = ({ output }) => {
     const o = parser(output);
-    return o && o.length ? <div className={containerCss}>
+
+    const calendar = (
+        <div className={containerCss}>
             { yearComponent(yearCss) }
-        <div className={calendarBody} >
-            { o.map(m => m ? monthComponent(m) : null) }
+            <div className={calendarBody} >
+                { o.map(m => m ? monthComponent(m) : null) }
+            </div>
         </div>
-    </div> : null;
+    );
+
+    return o && o.length ? calendar : null;
 };
 
 export { refreshFrequency, className }
