@@ -7,6 +7,7 @@ import {
   yearComponent,
   monthComponent,
 } from '../lib/calendars/commons';
+import Month from '../lib/calendars/Month';
 
 export const containerCss = css`
     background: rgba(0, 0, 0, 0.3);
@@ -53,7 +54,7 @@ export const render = ({ output }) => {
         <div className={containerCss}>
             { yearComponent(yearCss) }
             <div className={calendarBody} >
-                { o.map(m => m ? monthComponent(m) : null) }
+                { o.map((m, i) => m ? <Month { ...m } key={i}/> : null) }
             </div>
         </div>
     );

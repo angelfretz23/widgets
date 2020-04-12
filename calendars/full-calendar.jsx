@@ -7,6 +7,7 @@ import {
   yearComponent,
   monthComponent,
 } from '../lib/calendars/commons';
+import Month from '../lib/calendars/Month';
 
 export const containerCss = css`
     background: rgba(0, 0, 0, 0.3);
@@ -15,7 +16,7 @@ export const containerCss = css`
     border-style: outset;
     border-width: 1px;
 `
-export const calendarBody = css`
+export const monthsContainer = css`
     display: flex;
     width: 525px;
     flex-direction: row;
@@ -40,8 +41,8 @@ export const render = ({ output, error }) => {
     const o = parser(output);
     return o && o.length ? <div className={containerCss}>
         { yearComponent(yearCss) }
-        <div className={calendarBody} >
-            {o.map(m => m ? monthComponent(m) : null)}
+        <div className={monthsContainer} >
+            {o.map(m => m ? <Month { ...o }/> : null)}
         </div>
     </div> : null;
 };

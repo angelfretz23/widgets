@@ -21,7 +21,7 @@ export const className = `
 `;
 
 const backgroundStyle = {
-    padding: '25px 25px 0px 25px',
+    padding: '35px 25px 0px 25px',
 }
 
 export default weather;
