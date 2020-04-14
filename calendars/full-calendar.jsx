@@ -43,7 +43,7 @@ export const render = ({ output, error }) => {
     return o && o.length ? <div className={containerCss}>
         { yearComponent(yearCss) }
         <div className={monthsContainer} >
-            {o.map(m => m ? <Month { ...m }/> : null)}
+            {o.map( (m, i) => m ? <Month { ...m } key={i}/> : null)}
         </div>
     </div> : null;
 };

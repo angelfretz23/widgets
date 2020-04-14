@@ -1,18 +1,62 @@
-import Month from './lib/calendars/Month';
-import { parser } from './lib/calendars/commons';
 
-export const refreshFrequency = 10000;
+import { css } from 'uebersicht';
+import GitInfo from './lib/components/GitInfo';
 
-export const command = 'cal -h April 2020'
+export const refreshFrequency = 15 * 1000; // 15 seconds
 
-export const className = `
+export const command = 'cd ~/development/widgets; git status -s'
+
+export const className = css`
     top: 20px;
     left: 20px;
+
+    .unstaged_modified {
+        color: red;
+    }
+
+    .staged_modified {
+        color: #008000;
+    }
+
+    .unstaged_staged_modified {
+        color: purple;
+    }
+
+    .untracked {
+        color: yellow;
+    }
 `;
 
-export const render = ({ output }) => {
-    const data = parser(output);
-    const month = data[0].month;
-    const body = { ...data[0] };
-    return (<Month month={month} body={body} />);
+const GIT_STATUS_STATES = {
+    ' M': 'unstaged_modified',
+    'M ': 'staged_modified',
+    'MM': 'unstaged_staged_modified',
+    '??': 'untracked',
 }
+
+const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+};
+
+// export const render = ({ output }) => {
+//     const lines = output.split('\n');
+//     return (
+//         <div>
+//             {lines && lines.length ? lines.map((l, i) => {
+//                 if (!Boolean(l)) {
+//                     return null;
+//                 }
+//                 const gitStatusState = GIT_STATUS_STATES[l.slice(0, 2)];
+//                 return(
+//                 <div className={gitStatusState} key={i}>
+//                     {l}
+//                 </div>);
+//             }) : null}
+//         </div>
+//     );
+// };
+
+export const render = () => {
+    return (<GitInfo />);
+};

@@ -5,7 +5,6 @@ import {
   refreshFrequency,
   parser,
   yearComponent,
-  monthComponent,
 } from '../lib/calendars/commons';
 import Month from '../lib/calendars/Month';
 
