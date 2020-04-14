@@ -8,9 +8,10 @@ import {
   monthComponent,
 } from '../lib/calendars/commons';
 import Month from '../lib/calendars/Month';
+import { bgColor_66alpha } from '../lib/constants';
 
 export const containerCss = css`
-    background: rgba(0, 0, 0, 0.3);
+    background: ${bgColor_66alpha};
     padding: 50px 50px 30px 50px;
     border-radius: 20px;
     border-style: outset;
@@ -42,7 +43,7 @@ export const render = ({ output, error }) => {
     return o && o.length ? <div className={containerCss}>
         { yearComponent(yearCss) }
         <div className={monthsContainer} >
-            {o.map(m => m ? <Month { ...o }/> : null)}
+            {o.map(m => m ? <Month { ...m }/> : null)}
         </div>
     </div> : null;
 };
