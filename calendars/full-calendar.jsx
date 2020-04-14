@@ -8,7 +8,7 @@ import {
   monthComponent,
 } from '../lib/calendars/commons';
 import Month from '../lib/calendars/Month';
-import { bgColor_66alpha } from '../lib/constants';
+import { bgColor_alpha } from '../lib/constants';
 
 export const containerCss = css`
     background: ${bgColor_66alpha};

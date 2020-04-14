@@ -7,6 +7,7 @@ import {
   yearComponent,
 } from '../lib/calendars/commons';
 import Month from '../lib/calendars/Month';
+import Background from '../lib/components/Background';
 
 export const containerCss = css`
     background: rgba(0, 0, 0, 0.3);
@@ -16,9 +17,6 @@ export const containerCss = css`
     border-width: 1px;
     width: 900px;
     
-    display: flex;
-    flex-direction: row;
-    align-items: center;
 `
 export const calendarBody = css`
     display: flex;
@@ -46,16 +44,23 @@ const commandBuilder = () => {
 
 export const command = commandBuilder();
 
+const bgStyle = {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '900px',
+}
+
 export const render = ({ output }) => {
     const o = parser(output);
 
     const calendar = (
-        <div className={containerCss}>
+        <Background style={bgStyle}>
             { yearComponent(yearCss) }
             <div className={calendarBody} >
                 { o.map((m, i) => m ? <Month { ...m } key={i}/> : null) }
             </div>
-        </div>
+        </Background>
     );
 
     return o && o.length ? calendar : null;
