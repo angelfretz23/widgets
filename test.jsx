@@ -1,30 +1,18 @@
 
 import { css } from 'uebersicht';
 import GitInfo from './lib/components/GitInfo';
+import Link from './lib/components/Link';
+import Background from './lib/components/Background';
+import { Polar_Night, Aurora, Snow_Storm } from './lib/constants';
 
-export const refreshFrequency = 15 * 1000; // 15 seconds
+export const refreshFrequency = 1000 * 10; // 15 seconds
 
 export const command = 'cd ~/development/widgets; git status -s'
 
 export const className = css`
     top: 20px;
     left: 20px;
-
-    .unstaged_modified {
-        color: red;
-    }
-
-    .staged_modified {
-        color: #008000;
-    }
-
-    .unstaged_staged_modified {
-        color: purple;
-    }
-
-    .untracked {
-        color: yellow;
-    }
+    fontFamily: 'Source Han Code JP, Helvetica Neue',
 `;
 
 const GIT_STATUS_STATES = {
@@ -57,6 +45,13 @@ const containerStyle = {
 //     );
 // };
 
+const project = {
+    text: 'Widgets',
+    path: '~/development/widgets'
+};
+
 export const render = () => {
-    return (<GitInfo />);
+    return (
+        <GitInfo {...project}/>
+    );
 };

@@ -11,7 +11,7 @@ import Month from '../lib/calendars/Month';
 import { bgColor_alpha } from '../lib/constants';
 
 export const containerCss = css`
-    background: ${bgColor_66alpha};
+    background: ${bgColor_alpha};
     padding: 50px 50px 30px 50px;
     border-radius: 20px;
     border-style: outset;
