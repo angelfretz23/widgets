@@ -63,6 +63,7 @@ const listClassName = css`
             height: 100vh;
             scroll-snap-type: y mandatory;
             scroll-padding-top: 20px;
+            align-items: flex-start;
         }
 
         .container::-webkit-scrollbar {
