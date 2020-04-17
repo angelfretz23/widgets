@@ -54,6 +54,7 @@ const listClassName = css`
     fontFamily: Source Han Code JP, Helvetica Neue;
     overflow: visible;
     margin-left: 20px;
+    left: 970px;
 
         .container {
             display: flex;
@@ -112,21 +113,6 @@ const projects = p || [
         text: 'Core Service',
         path: '~/development/core_services/core_service',
         ide: IDE.intellij,
-    },
-    {
-        text: 'Core Service',
-        path: '~/development/core_services/core_service',
-        ide: IDE.intellij,
-    },
-    {
-        text: 'Tag Extractor',
-        path: '~/Documents/XCode/TagExtractor',
-        ide: IDE.code,
-    },
-    {
-        text: 'Particle',
-        path: '~/Documents/Portfolio/particle',
-        ide: IDE.code,
     },
 ];
 

@@ -1,0 +1,13 @@
+{
+  "name": "widgets",
+  "version": "1.0.0",
+  "description": "Ubersicht Widgets",
+  "main": "none",
+  "repository": "git@github.com:angelfretz23/widgets.git",
+  "author": "Angel Contreras <angel.contreras23@me.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "ansicolor": "^1.1.93"
+  }
+}
