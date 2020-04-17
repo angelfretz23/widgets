@@ -15,9 +15,9 @@ export const render = () => (
 );
 
 export const className = `
-    left: 20px;
-    top: 20px;
-    width: 800px;
+    margin-left: 20px;
+    top: 330px;
+    width: 724px;
 `;
 
 

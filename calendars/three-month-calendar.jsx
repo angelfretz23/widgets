@@ -14,9 +14,7 @@ export const containerCss = css`
     padding: 25px;
     border-radius: 20px;
     border-style: outset;
-    border-width: 1px;
-    width: 900px;
-    
+    border-width: 1px;    
 `
 export const calendarBody = css`
     display: flex;
@@ -27,8 +25,8 @@ export const calendarBody = css`
 `;
 
 export const yearCss = css`
-    font-size: 56px;
-    width:60px;
+    font-size: 40px;
+    width:40px;
     word-wrap: break-word;
     line-height: 90%
     
@@ -48,7 +46,7 @@ const bgStyle = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    width: '900px',
+    width: '100%',
 }
 
 export const render = ({ output }) => {

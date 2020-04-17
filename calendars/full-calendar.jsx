@@ -12,21 +12,21 @@ import { bgColor_alpha } from '../lib/constants';
 
 export const containerCss = css`
     background: ${bgColor_alpha};
-    padding: 50px 50px 30px 50px;
+    padding: 20px;
+    width: 36%;
     border-radius: 20px;
     border-style: outset;
     border-width: 1px;
 `
 export const monthsContainer = css`
     display: flex;
-    width: 525px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 `;
 
 export const yearCss = css`
-    font-size: 90px;
+    font-size: 60px;
     margin-bottom: 10px;
 `;
 
