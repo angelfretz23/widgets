@@ -60,10 +60,11 @@ const listClassName = css`
             display: flex;
             flex-flow: column nowrap;
             overflow-y: scroll;
-            height: 100vh;
+            height: 52.5vh;
             scroll-snap-type: y mandatory;
             scroll-padding-top: 20px;
             align-items: flex-start;
+            border-radius: 10px;
         }
 
         .container::-webkit-scrollbar {
@@ -71,7 +72,7 @@ const listClassName = css`
         }
 
 
-        .gitInfo {
+        .gitInfo:not(:last-of-type) {
             margin-bottom: 20px; 
         }
 
@@ -91,13 +92,6 @@ const getClassName = () => {
 };
 
 export const className = getClassName();
-
-const GIT_STATUS_STATES = {
-    ' M': 'unstaged_modified',
-    'M ': 'staged_modified',
-    'MM': 'unstaged_staged_modified',
-    '??': 'untracked',
-}
 
 const IDE = {
     code: 'code',
@@ -149,20 +143,6 @@ export const updateState = (event, previousState) => {
            return previousState;
        }
    }
-}
-
-const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    overflow: 'auto',
-    width: '100vh',
-    overflowY: 'scroll',
-    height: '100vh',
-};
-
-const childStyle = {
-    flexGlow: '1',
 }
 
 export const render = (event) => {
