@@ -20,7 +20,6 @@ export const className = `
     width: 724px;
 `;
 
-
 const backgroundStyle = {
     padding: '35px 25px 0px 25px',
 }

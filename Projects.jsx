@@ -64,7 +64,11 @@ const listClassName = css`
             scroll-snap-type: y mandatory;
             scroll-padding-top: 20px;
             align-items: flex-start;
-            border-radius: 10px;
+            border-radius: 20px;
+        }
+
+        .container:hover {
+            height: 100vh;
         }
 
         .container::-webkit-scrollbar {
@@ -80,7 +84,23 @@ const listClassName = css`
             margin-top: 20px;
         }
 
+        .details {
+            font-family: Monaco, regular;
+            margin-left: 10px;
+            font-size: 12px;
+            line-height: 110%;
+            font-weight: 200;
+            text-overflow: ellipsis;
+            overflow: hidden:
+        }
+
 `
+
+// whiteSpace: 'pre',
+// fontSize: '10px',
+// fontWeight: '200',
+// textOverflow: 'ellipsis',
+// overflow: 'hidden',
 
 const getClassName = () => {
     switch (PREFERRED_STYLE) {
@@ -107,7 +127,7 @@ const projects = p || [
     {
         text: 'Core Service',
         path: '~/development/core_services/core_service',
-        ide: IDE.intellij,
+        ide: IDE.code,
     },
 ];
 
