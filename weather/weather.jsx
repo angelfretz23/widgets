@@ -1,8 +1,12 @@
 import Background from "../lib/components/Background";
+import { Snow_Storm } from "../lib/constants";
 
-export const refreshFrequency = 1000 * 60;
+export const refreshFrequency = 1000 * 60 * 60;
 
-const iframe = '<iframe id="forecast_embed" frameborder="0" height="245" width="100%" src="https://forecast.io/embed/#lat=33.6102&lon=-111.8745&name=Scottsdale&color=#ffffff&text-color=#ffffff"></iframe>';
+const color = Snow_Storm.nord4;
+const textColor = Snow_Storm.nord4;
+
+const iframe = `<iframe id="forecast_embed" frameborder="0" height="245" width="100%" src="https://forecast.io/embed/#lat=33.6102&lon=-111.8745&name=Scottsdale&color=${color}&text-color=${textColor}"></iframe>`;
 
 const weather = (
     <div dangerouslySetInnerHTML={{ __html: iframe }} />

@@ -85,13 +85,14 @@ const listClassName = css`
         }
 
         .details {
-            font-family: Monaco, regular;
+            font-family: monospace;
             margin-left: 10px;
             font-size: 12px;
-            line-height: 110%;
+            line-height: 120%;
             font-weight: 200;
             text-overflow: ellipsis;
             overflow: hidden:
+            white-space: pre;
         }
 
 `
