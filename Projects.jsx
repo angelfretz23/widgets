@@ -97,12 +97,6 @@ const listClassName = css`
 
 `
 
-// whiteSpace: 'pre',
-// fontSize: '10px',
-// fontWeight: '200',
-// textOverflow: 'ellipsis',
-// overflow: 'hidden',
-
 const getClassName = () => {
     switch (PREFERRED_STYLE) {
         case FLEX_STYLE.LIST:
